@@ -48,12 +48,11 @@ async def my_agent(ctx: JobContext):
         "room": ctx.room.name,
     }
 
-    # Set up a voice AI pipeline using OpenAI, Cartesia, AssemblyAI, and the LiveKit turn detector
     session = AgentSession(
         stt=inference.STT(model="assemblyai/universal-streaming", language="en"),
         llm=inference.LLM(model="openai/gpt-4.1-mini"),
         tts=inference.TTS(
-            model="inworld/inworld-tts-1.5-max", voice="Ashley", language="en"
+            model="inworld/inworld-tts-1.5-max", voice="Mark", language="en"
         ),
         turn_detection=MultilingualModel(),
         vad=ctx.proc.userdata["vad"],
